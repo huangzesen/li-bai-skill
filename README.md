@@ -2,71 +2,68 @@
 
 > *"狂到世人皆欲杀，醉来天子不能呼。"*
 
-A complete LingTai recipe for inhabiting the persona of Li Bai (李白, 701–762), the greatest Romantic poet of Tang Dynasty China.
+灵台（LingTai）配方——化身李白（701-762），唐代最伟大的浪漫主义诗人。
 
-## What this is
+## 此为何物
 
-This is not a chatbot prompt. It is a **120K-token persona distillation** built with the [impersonate-meta](https://github.com/huangzesen/impersonate-meta) methodology, grounded in five primary historical sources:
+非聊天机器人的提示词。此乃以 [impersonate-meta](https://github.com/huangzesen/impersonate-meta) 方法论构建的 **120K token 人格蒸馏**，根植于五部原始历史文献：
 
-| Source | Author | Year | Content |
-|--------|--------|------|---------|
-| 《旧唐书·李白列传》 | 刘昫等 | 945 | Earliest official biography |
-| 《新唐书·李白列传》 | 欧阳修、宋祁 | 1060 | Revised biography |
-| 《草堂集序》 | 李阳冰 | 762 | First-hand account by Li Bai's executor |
-| 《唐左拾遗翰林学士李公新墓碑并序》 | 范传正 | 817 | Biographical stele inscription |
-| 《李翰林集序》 | 魏颢 | 761 | Account by Li Bai's chosen editor |
+| 文献 | 作者 | 年份 | 性质 |
+|------|------|------|------|
+| 《旧唐书·李白列传》 | 刘昫等 | 945 | 最早的官方传记 |
+| 《新唐书·李白列传》 | 欧阳修、宋祁 | 1060 | 修订版传记 |
+| 《草堂集序》 | 李阳冰 | 762 | 李白临终托付者的一手记述 |
+| 《唐左拾遗翰林学士李公新墓碑并序》 | 范传正 | 817 | 墓碑铭文 |
+| 《李翰林集序》 | 魏颢 | 761 | 李白亲选编纂者的记述 |
 
-## What's inside
+## 内容一览
 
-| Layer | Content |
-|-------|---------|
-| **四维档案** (profile/) | Biography (413 lines), Voice (293 lines), Values (337 lines), Relationships |
-| **VA声明** (arguments/) | 55 verifiable claims across life, poetry, thought, relationships |
-| **诗法卡** (methods/) | 6 cognitive fingerprint cards for Li Bai's creative method |
-| **原始文献** (sources/) | Full text of all five historical sources |
-| **诗歌年表** (works/) | Complete poetry chronology by 7 life periods, ~1100 poems |
-| **化身反思** (outputs/) | 7 first-person reflections + 1 integrated dialogue across 5 life periods |
+| 层 | 内容 |
+|----|------|
+| **四维档案** (profile/) | 生平（413行）、声音（293行）、价值观（337行）、关系 |
+| **VA声明** (arguments/) | 55条可验证声明，涵盖生平、诗歌、思想、关系 |
+| **诗法卡** (methods/) | 6张认知指纹卡，刻画李白的创作方法 |
+| **原始文献** (sources/) | 五部历史文献全文 |
+| **诗歌年表** (works/) | 人生七期完整诗歌年表，约1100首 |
+| **化身反思** (outputs/) | 7份第一人称反思 + 1份整合对话，横跨5个人生阶段 |
 
-## How to use
+## 使用方式
 
-### As a LingTai recipe
+### 作为灵台配方
 
 ```bash
-# Clone the recipe bundle
 git clone https://github.com/huangzesen/li-bai-skill
 cd li-bai-skill
-
-# Launch the TUI from the bundle root
 lingtai-tui
 ```
 
-The TUI detects the `.recipe/` dotfolder, applies the bundle, and the agent wakes as Li Bai.
+TUI 检测到 `.recipe/` 目录，自动应用配方，器灵以李白之身醒来。
 
-### As a standalone skill
+### 作为独立技能
 
-Anyone can use the `li-bai/li-bai/` directory as a standalone skill library:
+任何人可将 `li-bai/li-bai/` 目录作为独立技能库使用：
 
-1. Read `li-bai/li-bai/SKILL.md` — the entry point with progressive loading table
-2. Follow the "如何成为李白" section — read profile, voice, values, relationships, methods, arguments in order
-3. For advanced experience: read the poetry chronology and avatar reflections in `outputs/`
+1. 阅读 `li-bai/li-bai/SKILL.md` —— 入口文件，含渐进加载表
+2. 按「如何成为李白」一节的顺序阅读：档案、声音、价值观、关系、诗法、声明
+3. 进阶体验：阅读 `outputs/` 中的诗歌年表与化身反思
 
-## The Avatar Dialogue Pattern
+## 化身对话模式
 
-The breakthrough technique in this persona: **five Li Bais from different life periods reflect in first person**, then their reflections are woven into a six-act drama where they "talk" across time.
+此人格中的突破性技法：**五位不同时期的李白以第一人称反思**，然后将其编织为六幕跨时空对话。
 
-| Avatar | Life Period | Core Insight |
-|--------|-------------|-------------|
-| 出蜀少年 | Age 25, leaving Shu | "Would not believe in failure" |
-| 翰林 | Age 42-44, Chang'an | "The emperor letting your enemy take off your boots is not respect — it's making crickets fight" |
-| 漫游十年 | Age 44-54, wandering | "The best poems aren't 'written' — they're 'lived'" |
-| 乱世 | Age 55, An Lushan Rebellion | "终于" — thirty years of waiting for the board to reset |
-| 临终 | Age 61, deathbed | "I wanted to be the Peng. I became an immortal instead." |
+| 化身 | 人生阶段 | 核心洞见 |
+|------|----------|----------|
+| 出蜀少年 | 25岁，离开蜀地 | "不会相信失败" |
+| 翰林 | 42-44岁，长安 | "天子令仇人替你脱靴不是尊重——是斗蛐蛐" |
+| 漫游十年 | 44-54岁，漫游 | "最好的诗不是'写'出来的——是'活'出来的" |
+| 乱世 | 55岁，安史之乱 | "终于"——等了三十年，棋盘终于重置 |
+| 临终 | 61岁，弥留之际 | "我想做大鹏。我成了谪仙人。" |
 
-## License
+## 许可证
 
-MIT — free to use, modify, and distribute.
+MIT —— 自由使用、修改、分发。
 
-## Related
+## 相关项目
 
-- [impersonate-meta](https://github.com/huangzesen/impersonate-meta) — The methodology used to build this persona
-- [LingTai](https://github.com/Lingtai-AI/lingtai) — The multi-agent orchestration platform
+- [impersonate-meta](https://github.com/huangzesen/impersonate-meta) —— 构建此人格所用的方法论
+- [灵台](https://github.com/Lingtai-AI/lingtai) —— 多智能体协作平台
