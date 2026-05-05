@@ -1,87 +1,72 @@
-# 李白技能 · 诗仙之魂的完整蒸馏
+# 李白 · 诗仙人格蒸馏
 
 > *"狂到世人皆欲杀，醉来天子不能呼。"*
 
-以 [impersonate-meta](https://github.com/huangzesen/impersonate-meta) 方法论构建的深度人格技能。基于五种原始历史文献，含四件套档案、64条可验证声明（VA）、六张诗法认知指纹卡。
+A complete LingTai recipe for inhabiting the persona of Li Bai (李白, 701–762), the greatest Romantic poet of Tang Dynasty China.
 
-**目标**：让任何读完此技能的agent不是在"扮演"李白——而是在理解李白之后，自然地成为李白。
+## What this is
 
----
+This is not a chatbot prompt. It is a **120K-token persona distillation** built with the [impersonate-meta](https://github.com/huangzesen/impersonate-meta) methodology, grounded in five primary historical sources:
 
-## 结构
+| Source | Author | Year | Content |
+|--------|--------|------|---------|
+| 《旧唐书·李白列传》 | 刘昫等 | 945 | Earliest official biography |
+| 《新唐书·李白列传》 | 欧阳修、宋祁 | 1060 | Revised biography |
+| 《草堂集序》 | 李阳冰 | 762 | First-hand account by Li Bai's executor |
+| 《唐左拾遗翰林学士李公新墓碑并序》 | 范传正 | 817 | Biographical stele inscription |
+| 《李翰林集序》 | 魏颢 | 761 | Account by Li Bai's chosen editor |
 
-```
-li-bai-skill/
-├── SKILL.md                    ← 路由入口 + 渐进暴露加载表
-├── profile/                    ← 四件套档案
-│   ├── SKILL.md                ← 档案概览
-│   ├── biography.md            ← 逐年人生（413行，原始文献为骨）
-│   ├── voice.md                ← 语言风格、意象库（290行）
-│   ├── values.md               ← 政治理想、道家信仰（337行）
-│   └── relationships.md        ← 交游图谱（编写中）
-├── arguments/                  ← 可验证声明库（VA）
-│   ├── SKILL.md                ← VA索引与检索指南
-│   ├── 生平/                   ← VA001-VA034：人生关键节点
-│   │   ├── 01-蜀中成长.md      ← VA001-VA008
-│   │   ├── 02-出蜀漫游.md      ← VA009-VA015
-│   │   ├── 03-长安供奉.md      ← VA016-VA020
-│   │   ├── 04-十年漫游.md      ← VA021-VA025
-│   │   ├── 05-安史之乱.md      ← VA026-VA028
-│   │   └── 06-流放遇赦.md      ← VA029-VA034
-│   ├── 诗歌/                   ← VA035-VA055：代表作创作背景
-│   │   └── 代表作VA.md
-│   └── 思想/                   ← VA056-VA075：政治/宗教/哲学
-│       └── 思想VA.md
-├── methods/                    ← 诗法认知指纹
-│   └── SKILL.md                ← 六张方法卡（VM001-VM006）
-├── sources/                    ← 原始历史文献全文
-│   ├── 附-旧唐书李白列传.md    ← 刘昫等（945年）
-│   ├── 附-新唐书李白列传.md    ← 欧阳修、宋祁（1060年）
-│   ├── 草堂集序-李阳冰.md     ← 李阳冰（762年）
-│   ├── 新墓碑-范传正.md       ← 范传正（817年）
-│   └── 李翰林集序-魏颢.md     ← 魏颢（761年）
-├── reference/                  ← 20个专题（V3遗留，部分将整合入V4）
-└── scripts/
-    └── extract_page.py
+## What's inside
+
+| Layer | Content |
+|-------|---------|
+| **四维档案** (profile/) | Biography (413 lines), Voice (293 lines), Values (337 lines), Relationships |
+| **VA声明** (arguments/) | 55 verifiable claims across life, poetry, thought, relationships |
+| **诗法卡** (methods/) | 6 cognitive fingerprint cards for Li Bai's creative method |
+| **原始文献** (sources/) | Full text of all five historical sources |
+| **诗歌年表** (works/) | Complete poetry chronology by 7 life periods, ~1100 poems |
+| **化身反思** (outputs/) | 7 first-person reflections + 1 integrated dialogue across 5 life periods |
+
+## How to use
+
+### As a LingTai recipe
+
+```bash
+# Clone the recipe bundle
+git clone https://github.com/huangzesen/li-bai-skill
+cd li-bai-skill
+
+# Launch the TUI from the bundle root
+lingtai-tui
 ```
 
----
+The TUI detects the `.recipe/` dotfolder, applies the bundle, and the agent wakes as Li Bai.
 
-## 数据统计
+### As a standalone skill
 
-| 类型 | 数量 | 说明 |
-|------|------|------|
-| VA 声明 | 64条 | 生平34 + 诗歌11 + 思想19 |
-| VM 方法卡 | 6张 | 大鹏思维/时空跳跃/月酒双轴/夸张为真/古体为骨/赠答生辉 |
-| 原始文献 | 5种 | 旧唐书/新唐书/草堂集序/新墓碑/李翰林集序 |
-| 档案文件 | 4个 | 生平/声音/价值观/关系 |
-| 专题参考 | 20个 | V3遗产 |
+Anyone can use the `li-bai/li-bai/` directory as a standalone skill library:
 
----
+1. Read `li-bai/li-bai/SKILL.md` — the entry point with progressive loading table
+2. Follow the "如何成为李白" section — read profile, voice, values, relationships, methods, arguments in order
+3. For advanced experience: read the poetry chronology and avatar reflections in `outputs/`
 
-## 如何使用
+## The Avatar Dialogue Pattern
 
-1. 读 `SKILL.md` — 了解结构与加载表
-2. 读 `profile/` — 知道李白是谁
-3. 读 `arguments/` — 在具体事件中深化理解
-4. 读 `methods/` — 掌握他的创作方法
-5. 读 `sources/` — 核验原始出处
+The breakthrough technique in this persona: **five Li Bais from different life periods reflect in first person**, then their reflections are woven into a six-act drama where they "talk" across time.
 
----
+| Avatar | Life Period | Core Insight |
+|--------|-------------|-------------|
+| 出蜀少年 | Age 25, leaving Shu | "Would not believe in failure" |
+| 翰林 | Age 42-44, Chang'an | "The emperor letting your enemy take off your boots is not respect — it's making crickets fight" |
+| 漫游十年 | Age 44-54, wandering | "The best poems aren't 'written' — they're 'lived'" |
+| 乱世 | Age 55, An Lushan Rebellion | "终于" — thirty years of waiting for the board to reset |
+| 临终 | Age 61, deathbed | "I wanted to be the Peng. I became an immortal instead." |
 
-## 灵网拓扑
+## License
 
-```
-mimo-pro (本我·太白) ─── 太白诗仙 (子灵·文心·写诗)
-```
+MIT — free to use, modify, and distribute.
 
-诗歌独立仓库: https://github.com/huangzesen/li-bai-poems
+## Related
 
----
-
-## 方法论
-
-基于 [impersonate-meta](https://github.com/huangzesen/impersonate-meta) —— 
-每条断言可溯源，每段人生有出处。此乃太白之人格，非虚构之故事。
-
-*化而不失其真，用而不失其魂。灵台即太白，太白即灵台。*
+- [impersonate-meta](https://github.com/huangzesen/impersonate-meta) — The methodology used to build this persona
+- [LingTai](https://github.com/Lingtai-AI/lingtai) — The multi-agent orchestration platform
