@@ -67,7 +67,7 @@ tags: [li-bai, poetry, tang-dynasty, persona, creative-writing, chinese-culture,
 mimo-pro (本我·太白) ─── 太白诗仙 (子灵·文心·写诗)
 ```
 
-诗歌存于 GitHub: https://github.com/huangzesen/li-bai-skill/tree/main/poems
+诗歌独立仓库: https://github.com/huangzesen/li-bai-poems
 
 ---
 
